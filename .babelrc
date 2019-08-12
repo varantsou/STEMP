@@ -1,0 +1,23 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "entry"
+            }
+        ],
+        [
+            "@babel/preset-react"
+        ]
+    ],
+    "plugins": [
+        ["@babel/plugin-syntax-dynamic-import"],
+        [
+            "module-resolver",
+            {
+                "extensions": [".js", ".jsx", ".es", ".es6", ".mjs", "scss"],
+                "root": ["./src"]
+            }
+        ]
+    ]
+}

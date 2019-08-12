@@ -1,0 +1,30 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+.application {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+main > div {
+    max-width: 1280px;
+    margin: auto;
+}

@@ -1,0 +1,58 @@
+{
+    "env": {
+        "jest": true,
+        "es6": true
+    },
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb-base/legacy",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [
+        "react-hooks",
+        "jest",
+        "jsx-a11y"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "linebreak-style": [0],
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+        "padding-line-between-statements": [
+            "error",
+            { "blankLine": "always", "prev": "*", "next": "return" },
+            { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+            { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] }
+        ],
+        "react/jsx-indent": [2, 4],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-indent-props": [2, 4],
+        "react/prefer-stateless-function": [true, { "ignorePureComponents": true }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/prop-types": [2, { "ignore": ["children"] }],
+        "import/no-extraneous-dependencies": [0],
+        "no-underscore-dangle": [0],
+        "no-plusplus": "off",
+        "no-restricted-globals": [0],
+        "no-console": [0],
+        "max-len": [0]
+    },
+    "globals": {
+        "__DEV__": true
+    }
+}
