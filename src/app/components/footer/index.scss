@@ -1,11 +1,16 @@
+@import "./app/styles/base";
+
 .footer {
     background: #1c1c1c;
     color: #fff;
-    padding: 12px 0;
-    min-height: 80px;
 
     &__container {
-        max-width: 1280px;
-        margin: auto;
+        @include screen-container;
+
+        svg {
+            fill: #a72e2e;
+            width: 160px;
+            margin-bottom: -20px;
+        }
     }
 }

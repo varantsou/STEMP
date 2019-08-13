@@ -3,10 +3,20 @@ import { Link } from 'react-router-dom';
 
 import './index.scss';
 
+const baseClassName = 'header';
+const getClassNames = () => {
+    return {
+        component: baseClassName,
+        container: `${baseClassName}__container`
+    };
+};
+
 const Header = () => {
+    const classNames = getClassNames();
+
     return (
-        <header className="header">
-            <div className="header-nav">
+        <header className={classNames.component}>
+            <div className={classNames.container}>
                 <nav>
                     <ul className="menu">
                         <li>

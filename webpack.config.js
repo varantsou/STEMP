@@ -18,8 +18,13 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
-            },
+                use: ['style-loader', 'css-loader', {
+                    loader: 'sass-loader',
+                    options: {
+                        includePaths: ['src/']
+                    }
+                }]
+            }
         ]
     },
     plugins: [
@@ -29,7 +34,7 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            app: path.resolve(__dirname, 'src/')
+            app: path.resolve(__dirname, 'src/app/')
         }
     }
 };

@@ -1,0 +1,7 @@
+@import "./app/styles/base";
+
+.home {
+    &__container {
+        @include screen-container;
+    }
+}
