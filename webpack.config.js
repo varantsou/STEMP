@@ -7,6 +7,10 @@ module.exports = {
         path: path.join(__dirname, '/dist'),
         filename: 'index_bundle.js'
     },
+    devServer: {
+        contentBase: './dist',
+        historyApiFallback: true
+    },
     module: {
         rules: [
             {
@@ -24,6 +28,16 @@ module.exports = {
                         includePaths: ['src/']
                     }
                 }]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                    'file-loader'
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg)$/,
+                use: 'file-loader'
             }
         ]
     },

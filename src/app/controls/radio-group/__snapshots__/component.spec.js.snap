@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render RadioGroup component with "className" property 1`] = `
+<div
+  className="radio-group test-class"
+  role="radiogroup"
+>
+  <fieldset
+    className="radio-group__list"
+  />
+</div>
+`;
+
+exports[`Should render RadioGroup component with "disabled" property 1`] = `
+<div
+  className="radio-group"
+  role="radiogroup"
+>
+  <fieldset
+    aria-disabled={true}
+    className="radio-group__list"
+    disabled={true}
+  />
+</div>
+`;
+
+exports[`Should render RadioGroup component with "validate" property 1`] = `
+<div
+  className="radio-group"
+  role="radiogroup"
+>
+  <fieldset
+    className="radio-group__list"
+  />
+</div>
+`;
+
+exports[`Should render RadioGroup component with default properties 1`] = `
+<div
+  className="radio-group test-class"
+  role="radiogroup"
+>
+  <fieldset
+    aria-disabled={true}
+    className="radio-group__list"
+    disabled={true}
+  />
+</div>
+`;
+
+exports[`Should render RadioGroup component with required properties 1`] = `
+<div
+  className="radio-group"
+  role="radiogroup"
+>
+  <fieldset
+    className="radio-group__list"
+  />
+</div>
+`;

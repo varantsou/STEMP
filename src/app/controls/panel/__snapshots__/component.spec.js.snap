@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Panel component with properties 1`] = `
+<div
+  className="panel test-class"
+>
+  <div
+    className="panel__header"
+  >
+    <h2
+      className="panel__title"
+    >
+      Test title
+    </h2>
+    <Button
+      className="panel__button"
+      onClick={[Function]}
+      theme="link"
+    >
+      Edit
+    </Button>
+  </div>
+</div>
+`;
+
+exports[`Should render Panel component without properties 1`] = `
+<div
+  className="panel"
+>
+  <div
+    className="panel__header"
+  />
+</div>
+`;

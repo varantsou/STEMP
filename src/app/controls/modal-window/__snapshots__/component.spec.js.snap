@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalWindow component Should match snapshots with "className" property 1`] = `
+<div
+  className="modal-window test-class"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex="-1"
+>
+  <section
+    className="modal-window__main"
+    tabIndex="-1"
+  >
+    <div
+      className="modal-window__header"
+    >
+      <button
+        className="modal-window__close"
+        onClick={[Function]}
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </button>
+    </div>
+    <div
+      className="modal-window__body"
+    />
+  </section>
+</div>
+`;
+
+exports[`ModalWindow component Should match snapshots with "hasCloseButton" property 1`] = `
+<div
+  className="modal-window"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex="-1"
+>
+  <section
+    className="modal-window__main"
+    tabIndex="-1"
+  >
+    <div
+      className="modal-window__header"
+    />
+    <div
+      className="modal-window__body"
+    />
+  </section>
+</div>
+`;
+
+exports[`ModalWindow component Should match snapshots with "title" property 1`] = `
+<div
+  className="modal-window"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex="-1"
+>
+  <section
+    className="modal-window__main"
+    tabIndex="-1"
+  >
+    <div
+      className="modal-window__header"
+    >
+      <h2
+        className="modal-window__title"
+      >
+        test title
+      </h2>
+      <button
+        className="modal-window__close"
+        onClick={[Function]}
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </button>
+    </div>
+    <div
+      className="modal-window__body"
+    />
+  </section>
+</div>
+`;
+
+exports[`ModalWindow component Should match snapshots with default properties 1`] = `
+<div
+  className="modal-window test-class"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex="-1"
+>
+  <section
+    className="modal-window__main"
+    tabIndex="-1"
+  >
+    <div
+      className="modal-window__header"
+    >
+      <h2
+        className="modal-window__title"
+      >
+        test title
+      </h2>
+    </div>
+    <div
+      className="modal-window__body"
+    />
+  </section>
+</div>
+`;
+
+exports[`ModalWindow component Should match snapshots with required properties 1`] = `
+<div
+  className="modal-window"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="presentation"
+  tabIndex="-1"
+>
+  <section
+    className="modal-window__main"
+    tabIndex="-1"
+  >
+    <div
+      className="modal-window__header"
+    >
+      <button
+        className="modal-window__close"
+        onClick={[Function]}
+      >
+        <img
+          alt=""
+          src="test-file-stub"
+        />
+      </button>
+    </div>
+    <div
+      className="modal-window__body"
+    />
+  </section>
+</div>
+`;

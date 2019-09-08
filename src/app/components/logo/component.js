@@ -1,9 +1,12 @@
 import React from 'react';
-import CreateOrder from 'app/components/create-order';
+
+import HyperLink from 'app/controls/hyper-link';
+
+import LogoIcon from './icons/logo';
 
 import './index.scss';
 
-const baseClassName = 'home';
+const baseClassName = 'logo';
 const getClassNames = () => {
     return {
         component: baseClassName,
@@ -11,16 +14,19 @@ const getClassNames = () => {
     };
 };
 
-const Home = () => {
+const Logo = () => {
     const classNames = getClassNames();
+
+    // console.log(logoIcon);
 
     return (
         <div className={classNames.component}>
-            <div className={classNames.container}>
-                <CreateOrder/>
-            </div>
+            <HyperLink to="/">
+                <LogoIcon/>
+                PERSONAL<br/>DRIVER
+            </HyperLink>
         </div>
     );
 };
 
-export default Home;
+export default Logo;

@@ -10,6 +10,7 @@ import Footer from 'app/components/footer';
 import Home from 'app/pages/home';
 import Catalog from 'app/pages/catalog';
 import Blog from 'app/pages/blog';
+import ComponentsPage from 'app/pages/all-components';
 
 import './index.scss';
 
@@ -31,6 +32,7 @@ const App = () => {
                     <Route path={routes.home} exact component={Home} />
                     <Route path={routes.catalog} component={Catalog} />
                     <Route path={routes.blog} component={Blog} />
+                    <Route path={routes.allComponents} component={ComponentsPage} />
                 </main>
                 <Footer/>
             </div>

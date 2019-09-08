@@ -17,6 +17,12 @@ const Catalog = () => {
         <div className={classNames.component}>
             <div className={classNames.container}>
                 Catalog page
+
+                <ul>
+                    <li>1. Маршрут</li>
+                    <li>2. Почасовая оплата</li>
+                    <li>3. Мало- и средне-габаритная грузоперевозка</li>
+                </ul>
             </div>
         </div>
     );

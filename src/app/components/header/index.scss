@@ -1,18 +1,29 @@
 @import "./app/styles/base";
 
 .header {
-    background: #ac2121;
-    padding: 12px 0;
+    background: $brandColor2;
 
     &__container {
         @include screen-container;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-}
 
-.menu {
-    display: flex;
+    &__menu {
+        display: flex;
+        align-items: center;
 
-    li  + li {
-        margin-left: 40px;
+        li  + li {
+            margin-left: 40px;
+        }
+
+        &-icon {
+            width: 28px;
+        }
+
+        .hyper-link {
+            color: #fff;
+        }
     }
 }

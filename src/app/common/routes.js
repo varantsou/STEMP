@@ -1,5 +1,6 @@
 export default {
     home: '/',
     catalog: '/catalog',
-    blog: '/blog'
+    blog: '/blog',
+    allComponents: '/all-components'
 };
