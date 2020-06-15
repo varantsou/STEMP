@@ -1,7 +1,13 @@
 @import "./app/styles/base";
 
 .catalog-page {
+    background: #f3f3f3;
+    height: 400px;
     &__container {
         @include screen-container;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

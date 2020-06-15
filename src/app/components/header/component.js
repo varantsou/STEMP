@@ -1,57 +1,63 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import Logo from 'app/components/logo';
-import HyperLink from 'app/controls/hyper-link';
+import {
+    // DadJokeProvider,
+    useDadJokeState,
+    useDadJokeActions
+} from 'app/common/context/globalContext';
+
+import Button from 'app/controls/button';
+
+import MenuIcon from './icons/menu';
+import Input from 'app/controls/input';
 
 import './index.scss';
-
-import homeIcon from 'app/images/icons/home.svg';
 
 const baseClassName = 'header';
 const getClassNames = () => {
     return {
         component: baseClassName,
         container: `${baseClassName}__container`,
-        logo: `${baseClassName}__logo`,
-        menu: `${baseClassName}__menu`,
-        menuIcon: `${baseClassName}__menu-icon`
+        topHeader: `${baseClassName}-top`,
+        menu: `${baseClassName}__menu`
     };
 };
 
-const Header = () => {
+const Header = (props) => {
+    const { dadJoke } = useDadJokeState();
+    const { fetchDadJoke } = useDadJokeActions();
+
+    const handleMenuClick = () => {
+        const { onClick } = props;
+
+        if (onClick) {
+            onClick();
+        }
+
+        fetchDadJoke('new state value');
+    };
+
     const classNames = getClassNames();
 
     return (
-        <header className={classNames.component}>
-            <div className={classNames.container}>
-                <Logo/>
-                <nav>
-                    <ul className={classNames.menu}>
-                        <li>
-                            <HyperLink to="/">
-                                <img className={classNames.menuIcon} src={homeIcon} alt=""/>
-                            </HyperLink>
-                        </li>
-                        <li>
-                            <HyperLink to="/catalog">Услуги</HyperLink>
-                        </li>
-                        <li>
-                            <HyperLink to="/blog">Отзывы</HyperLink>
-                        </li>
-                        <li>
-                            <HyperLink to="/blog">Вопросы и ответы</HyperLink>
-                        </li>
-                        <li>
-                            <HyperLink to="/blog">Контакты</HyperLink>
-                        </li>
-                        <li>
-                            <HyperLink to="/all-components">Components</HyperLink>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <>
+
+            <header className={classNames.component}>
+                {dadJoke}
+                <div className={classNames.topHeader}>
+                    <Button onClick={handleMenuClick}>
+                        <MenuIcon />
+                    </Button>
+                    <Input text="Search"/>
+                </div>
+            </header>
+        </>
     );
+};
+
+Header.propTypes = {
+    onClick: PropTypes.func
 };
 
 export default Header;

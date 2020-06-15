@@ -3,6 +3,7 @@ import React from 'react';
 import Input from 'app/controls/input';
 import Button from 'app/controls/button';
 import Dropdown from 'app/controls/dropdown';
+import Checkbox from 'app/controls/checkbox';
 
 const places = [
     'Могилев',
@@ -29,6 +30,7 @@ const ComponentsPage = () => {
     return (
         <div className={classNames.component}>
             <div className={classNames.container}>
+                <Checkbox disabled={true}>Checkbox</Checkbox>
                 <Input
                     disabled={false}
                     placeholder=""
@@ -40,7 +42,9 @@ const ComponentsPage = () => {
                     disabled={true}
                     placeholder=""
                     multiline={true}
-                />
+                >
+                    Textarea
+                </Input>
                 <hr/>
                 <Button>Button</Button>
                 <hr/>

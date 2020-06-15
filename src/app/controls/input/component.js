@@ -7,12 +7,11 @@ import './index.scss';
 
 const baseClassName = 'input';
 const getClassNames = (props) => {
-    const { className, disabled, title } = props;
+    const { className, disabled } = props;
 
     const componentClassName = utils.getClassName(
         baseClassName,
         className,
-        [`${baseClassName}--no-title`, !title],
         [`${baseClassName}--disabled`, disabled]
     );
 
@@ -53,19 +52,21 @@ const Input = (props) => {
 
         if (multiline) {
             output = (
-                <textarea
-                    className={classNames.component}
-                    disabled={disabled}
-                    placeholder={placeholder}
-                    maxLength={maxLength}
-                />
+                <div className={classNames.component}>
+                    <textarea
+                        className={classNames.input}
+                        disabled={disabled}
+                        placeholder={placeholder}
+                        maxLength={maxLength}
+                    />
+                </div>
             );
         } else {
             output = (
-                <div>
+                <div className={classNames.component}>
                     {labelOutput}
                     <input
-                        className={classNames.component}
+                        className={classNames.input}
                         disabled={disabled}
                         type={type}
                         placeholder={placeholder}

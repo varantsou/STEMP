@@ -1,5 +1,6 @@
 import React from 'react';
-import CreateOrder from 'app/components/create-order';
+
+import MainBanner from 'app/components/main-banner';
 
 import './index.scss';
 
@@ -16,9 +17,7 @@ const Home = () => {
 
     return (
         <div className={classNames.component}>
-            <div className={classNames.container}>
-                <CreateOrder/>
-            </div>
+            <MainBanner/>
         </div>
     );
 };

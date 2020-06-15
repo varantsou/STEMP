@@ -5,8 +5,12 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'index_bundle.js'
+        filename: 'index_bundle.js',
+        library: 'someLibName',
+        libraryTarget: 'umd',
+        auxiliaryComment: 'Test Comment'
     },
+    devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
         historyApiFallback: true
@@ -48,7 +52,7 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            app: path.resolve(__dirname, 'src/app/')
+            app: path.resolve(__dirname, 'src/app')
         }
     }
 };

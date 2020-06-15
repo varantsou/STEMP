@@ -1,7 +1,0 @@
-@import "./app/styles/base";
-
-.blog-page {
-    &__container {
-        @include screen-container;
-    }
-}

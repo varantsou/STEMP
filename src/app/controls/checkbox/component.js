@@ -1,139 +1,98 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import utils from 'main/common/utils';
+import utils from 'app/common/utils';
 
 import './index.scss';
 
-import iconCheckButtonOn from 'icons/check-button-on.svg';
+import iconCheckButtonOn from './icons/check.svg';
 
 const baseClassName = 'checkbox';
+const getClassNames = (props) => {
+    const { className, disabled, checked } = props;
 
-class Checkbox extends React.PureComponent {
-    constructor(props) {
-        super(props);
+    const componentClassName = utils.getClassName(
+        baseClassName,
+        className,
+        [`${baseClassName}--checked`, checked],
+        [`${baseClassName}--disabled`, disabled]
+    );
 
-        this.state = {
-            checked: !!props.checked
-        };
-    }
+    return {
+        component: componentClassName,
+        value: `${baseClassName}__value`,
+        valueIcon: `${baseClassName}__value-icon`,
+        input: `${baseClassName}__input`
+    };
+};
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.checked !== this.props.checked) {
-            this.setState({
-                checked: !!this.props.checked
-            });
+const Checkbox = (props) => {
+    const {
+        selected,
+        disabled,
+        onChange
+    } = props;
+
+    const [checked, toggleChecked] = useState(!!selected);
+
+    const classNames = getClassNames(props);
+
+    const handleClick = () => {
+        toggleChecked(!checked);
+
+        if (onChange) {
+            onChange();
         }
-    }
-
-    getClassNames = () => {
-        const { className, disabled } = this.props;
-        const { checked } = this.state;
-        const componentClassName = utils.getClassName(
-            baseClassName,
-            className,
-            [`${baseClassName}--checked`, checked],
-            [`${baseClassName}--disabled`, disabled]
-        );
-
-        return {
-            component: componentClassName,
-            value: `${baseClassName}__value`,
-            valueIcon: `${baseClassName}__value-icon`
-        };
     };
 
-    render() {
-        const { disabled } = this.props;
-        const { checked } = this.state;
+    const handleKeyDown = (event) => {
+        const keyCode = event.keyCode;
 
-        const classNames = this.getClassNames();
+        if (keyCode === 13) {
+            toggleChecked(!checked);
+        }
+    };
 
-        const valueOutput = this.renderValue(classNames);
+    const renderValue = () => {
+        let output;
 
-        return (
+        if (!checked) {
+            output = (
+                <img className={classNames.valueIcon} width="12" src={iconCheckButtonOn} alt="" />
+            );
+        }
+
+        return output;
+    };
+
+    const render = () => {
+        const valueOutput = renderValue();
+
+        const output = (
             <div className={classNames.component}
                 tabIndex="0"
                 role="checkbox"
                 aria-checked={checked}
                 aria-disabled={disabled}
-                onClick={this.handleClick}
-                onKeyDown={this.handleKeyDown}
-                onBlur={this.handleBlur}
+                onClick={handleClick}
+                onKeyDown={handleKeyDown}
+                // onBlur={handleBlur}
             >
-                {valueOutput}
-                {this.props.children}
+                <div className={classNames.value}>
+                    {valueOutput}
+                </div>
+                {props.children}
             </div>
         );
-    }
 
-    renderValue = (classNames) => {
-        const { checked } = this.state;
-
-        let output;
-
-        if (checked) {
-            output = (
-                <img className={classNames.valueIcon} src={iconCheckButtonOn} alt="" />
-            );
-        }
-
-        return (
-            <div className={classNames.value}>
-                {output}
-            </div>
-        );
+        return output;
     };
 
-    handleClick = () => {
-        this.toggleChecked();
-    };
-
-    handleKeyDown = (event) => {
-        const keyCode = event.keyCode;
-
-        if (keyCode === 32) {
-            event.preventDefault();
-            this.toggleChecked();
-        }
-    };
-
-    handleBlur = () => {
-        const { onLostFocus } = this.props;
-        const { checked } = this.state;
-
-        if (onLostFocus) {
-            onLostFocus(checked);
-        }
-    };
-
-    toggleChecked = () => {
-        const { checked } = this.state;
-        const { onChanged } = this.props;
-
-        const newChecked = !checked;
-
-        this.setState({
-            checked: newChecked
-        });
-
-        if (onChanged) {
-            onChanged(newChecked);
-        }
-    };
-}
-
-Checkbox.propTypes = {
-    className: PropTypes.string,
-    checked: PropTypes.bool,
-    disabled: PropTypes.bool,
-    validate: PropTypes.bool,
-    onChanged: PropTypes.func,
-    onLostFocus: PropTypes.func
+    return render();
 };
 
-Checkbox.defaultProps = {
-    validate: true
+Checkbox.propTypes = {
+
 };
 
 export default Checkbox;

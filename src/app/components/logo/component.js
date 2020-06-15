@@ -1,8 +1,6 @@
 import React from 'react';
 
-import HyperLink from 'app/controls/hyper-link';
-
-import LogoIcon from './icons/logo';
+import MenuIcon from './icons/logo';
 
 import './index.scss';
 
@@ -17,14 +15,9 @@ const getClassNames = () => {
 const Logo = () => {
     const classNames = getClassNames();
 
-    // console.log(logoIcon);
-
     return (
-        <div className={classNames.component}>
-            <HyperLink to="/">
-                <LogoIcon/>
-                PERSONAL<br/>DRIVER
-            </HyperLink>
+        <div className={classNames.component} >
+            <MenuIcon/>
         </div>
     );
 };

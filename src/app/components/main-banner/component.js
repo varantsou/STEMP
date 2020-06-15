@@ -2,24 +2,25 @@ import React from 'react';
 
 import './index.scss';
 
-const baseClassName = 'blog-page';
+const baseClassName = 'main-banner';
 const getClassNames = () => {
     return {
         component: baseClassName,
-        container: `${baseClassName}__container`
+        container: `${baseClassName}__container`,
+        banner: `${baseClassName}__banner`
     };
 };
 
-const Blog = () => {
+const MainBanner = () => {
     const classNames = getClassNames();
 
     return (
         <div className={classNames.component}>
-            <div className={classNames.container}>
-                Blog page
+            <div className={classNames.banner}>
+                Main banner
             </div>
         </div>
     );
 };
 
-export default Blog;
+export default MainBanner;

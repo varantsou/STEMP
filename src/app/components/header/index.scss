@@ -1,29 +1,33 @@
-@import "./app/styles/base";
+@import 'src/app/styles/base';
 
 .header {
-    background: $brandColor2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    padding: 8px 12px 8px 8px;
+    border-right: 1px solid #b8b8b8;
+    min-height: 100vh;
 
-    &__container {
-        @include screen-container;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__menu {
+    &-top {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        width: 100%;
 
-        li  + li {
-            margin-left: 40px;
+        .input {
+            width: 100%;
         }
 
-        &-icon {
-            width: 28px;
-        }
+        .button {
+            padding: 0;
+            margin-right: 4px;
+            border: none;
+            background-color: transparent;
+            transition: .4s;
 
-        .hyper-link {
-            color: #fff;
+            &:hover {
+                opacity: .8;
+            }
         }
     }
 }

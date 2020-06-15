@@ -6,6 +6,8 @@
     border-radius: 4px;
     cursor: pointer;
     transition: .4s;
+    display: flex;
+    align-items: center;
 
     &--disabled {
         pointer-events: none;

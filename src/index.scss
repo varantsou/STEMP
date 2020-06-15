@@ -8,6 +8,9 @@ body {
     font-family: 'Roboto';
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: .02em;
 }
 
 ul {
@@ -19,8 +22,12 @@ ul {
 
 .application {
     display: flex;
-    flex-direction: column;
-    height: 600px;
-    min-height: 100vh;
+    flex-direction: row;
     justify-content: space-between;
+    padding-left: 280px;
 }
+
+.main {
+    width: 100%;
+}
+
