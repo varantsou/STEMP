@@ -1,0 +1,50 @@
+@import 'main/styles/index';
+
+.panel {
+    &__content {
+        padding: 22px 20px;
+        border: 1px solid $color-panel-border;
+
+        @include min-screen-m {
+            height: 100%;
+            overflow-y: auto;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        @include min-screen-l {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__title {
+        @include font-size-16;
+        @include font-yantramanav;
+
+        color: $color-panel-text;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+
+    @include min-screen-l {
+        padding: 20px 28px;
+    }
+
+    &__button {
+        @include font-size-12;
+
+        @include min-screen-m {
+            @include font-size-14;
+        }
+
+        @include min-screen-x {
+            @include font-size-16;
+        }
+    }
+}

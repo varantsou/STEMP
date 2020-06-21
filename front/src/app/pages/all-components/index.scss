@@ -1,0 +1,8 @@
+@import "./app/styles/base";
+
+.components {
+    padding: 80px 0;
+    &__container {
+        @include screen-container;
+    }
+}

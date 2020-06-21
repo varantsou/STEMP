@@ -1,0 +1,23 @@
+@import 'app/styles/base';
+
+.hyper-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: $brandColor;
+    text-decoration: none;
+
+    //&:after {
+    //    content: "";
+    //    position: absolute;
+    //    left: 0;
+    //    right: 0;
+    //    bottom: 1px;
+    //    height: 1px;
+    //    background-color: transparent;
+    //}
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

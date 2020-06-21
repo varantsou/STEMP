@@ -1,0 +1,49 @@
+$screenXS: 480;
+$screenX: 768;
+$screenM: 1024;
+$screenL: 1280;
+$screenXL: 1920;
+
+@mixin screen-x {
+    @media screen and (min-width: $screenX + px) and (max-width: $screenM - 1 + px) {
+        @content;
+    }
+}
+
+@mixin min-screen-m {
+    @media screen and (min-width: $screenM + px) {
+        @content;
+    }
+}
+
+@mixin min-screen-l {
+    @media screen and (min-width: $screenL + px) {
+        @content;
+    }
+}
+
+@mixin min-screen-xl {
+    @media screen and (min-width: $screenXL + px) {
+        @content;
+    }
+}
+
+@mixin screen-container() {
+    margin: 0 auto;
+    padding: 0 12px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include screen-x {
+        width: 768 + px;
+    }
+
+    @include min-screen-m {
+        width: 1024 + px;
+    }
+
+    @include min-screen-l {
+        width: 1440 + px;
+    }
+}
